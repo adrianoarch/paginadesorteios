@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Sorteio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content" id="main">
+        <h1>Página de Sorteio</h1>
+        <p>Adicione os nomes para sortear o ganhador</p>
+        <div class="box" id="initialbox">
+          <form id="novaPessoa">
+            <input type="text" id="participantes" placeholder="Insira o nome do participante" autofocus/>
+            <input class="addparticipantes" type="submit" id="participantes" value="Adicionar"/>
+          </form>
+        </div>
+        <p id="erro" style="display:none">Por favor, adicione um nome.</p>
+        
+        <div class="listaparticipantes" id="lista"></div>
+        <button class="addparticipantes" id="buttonsorteio" type="submit">Sortear</button>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
