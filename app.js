@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
     listaParticipantes.appendChild(participantesAdicionados);
     listaParticipantes.appendChild(buttonremove);
     lista.appendChild(listaParticipantes);
-    main.appendChild(buttonResetParticipantes)
+  
 
     input.value = "";
 
