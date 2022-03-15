@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Fredoka&family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -20,14 +24,42 @@
         <p>Adicione os nomes para sortear o ganhador</p>
         <div class="box" id="initialbox">
           <form id="novaPessoa">
-            <input type="text" id="participantes" placeholder="Insira o nome do participante" autofocus/>
-            <input class="addparticipantes" type="submit" id="participantes" value="Adicionar"/>
+            <input
+              type="text"
+              id="participantes"
+              placeholder="Insira o nome do participante"
+              autofocus
+            />
+            <input
+              class="addparticipantes"
+              type="submit"
+              id="participantes"
+              value="Adicionar"
+            />
           </form>
         </div>
-        <p id="erro" style="display:none">Por favor, adicione um nome.</p>
-        
+        <p id="erro" style="display: none">Por favor, adicione um nome.</p>
+
         <div class="listaparticipantes" id="lista"></div>
-        <button class="addparticipantes" id="buttonsorteio" type="submit">Sortear</button>
+        <button class="addparticipantes" id="buttonsorteio" type="submit">
+          Sortear
+        </button>
+        <div class="loading">
+          <div class="animacaoloading"></div>
+          <p>Processando...</p>
+        </div>
+        <div class="popup-wrapper">
+          <div class="popup">
+            <div class="popup-close">
+              <i class="material-icons" style="color: rgb(250, 249, 249)"> highlight_off </i>
+            </div>
+            <!-- popup -->
+            <div class="popup-content">
+              <h2>O vencedor foi:</h2>
+              <div class="winner"><p></p></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./app.js"></script>

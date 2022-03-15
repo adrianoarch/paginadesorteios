@@ -3,8 +3,11 @@ window.addEventListener("load", () => {
   const input = document.querySelector("#participantes");
   const lista = document.querySelector("#lista");
   const main = document.querySelector("#main");
+  const boxInitial = document.querySelector("#initialbox")
   const erro = document.querySelector("#erro");
   const buttonSorteio = document.querySelector("#buttonsorteio");
+  const loadingResult = document.querySelector(".loading");
+
 
   const validaParticipante = () => {
     input.addEventListener("input", (event) => {
@@ -37,19 +40,45 @@ window.addEventListener("load", () => {
     listaParticipantes.appendChild(participantesAdicionados);
     listaParticipantes.appendChild(buttonremove);
     lista.appendChild(listaParticipantes);
+    main.appendChild(buttonResetParticipantes)
 
     input.value = "";
-    
-    console.log("O tamanho é " + lista.childNodes.length);
-    console.log(listaParticipantes.childNodes[0].textContent);
 
+    buttonremove.addEventListener("click", () => {
+      lista.removeChild(listaParticipantes);
+    });
   });
-  
+
   buttonSorteio.addEventListener("click", () => {
-  const vencedor = Math.floor(Math.random() * lista.childNodes.length);
+    loadingResult.style.display = "flex";
+
+    const vencedor = Math.floor(Math.random() * lista.childNodes.length);
     console.log(vencedor);
-  const pessoa = lista.childNodes[vencedor].firstChild.innerText;
-  console.log(pessoa);
-});
-    
+    const pessoa = lista.childNodes[vencedor].firstChild.innerText;
+    console.log(pessoa);
+
+    const popup = document.querySelector(".popup-wrapper")
+    const anuncioVencedorTexto = document.querySelector(".popup-content")
+
+    console.log(anuncioVencedorTexto.childNodes);
+    console.log(anuncioVencedorTexto.childNodes[3])
+    console.log(anuncioVencedorTexto.childNodes[3].childNodes[0]);
+
+    const popupText = anuncioVencedorTexto.childNodes[3].childNodes[0];
+
+    popupText.innerText = pessoa
+
+    setTimeout(() => {
+      popup.style.display='flex';
+      loadingResult.style.display="none";
+  },
+   3000)
+
+   const fecharPopUp = document.querySelector(".material-icons")
+
+   fecharPopUp.addEventListener('click', () => {
+     popup.style.display='none'
+   })
+  });
+
 });
