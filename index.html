@@ -39,10 +39,17 @@
           </form>
         </div>
         <p id="erro" style="display: none">Por favor, adicione um nome.</p>
+        <p id="erroreset" style="display: none">Não há nada para limpar.</p>
+        <p id="errosorteio">
+          Para realizar o sorteio, é necessário no mínimo dois participantes.
+        </p>
 
         <div class="listaparticipantes" id="lista"></div>
         <button class="addparticipantes" id="buttonsorteio" type="submit">
           Sortear
+        </button>
+        <button class="resetaritens" id="limparNomes" type="submit">
+          Limpar
         </button>
         <div class="loading">
           <div class="animacaoloading"></div>
@@ -51,7 +58,9 @@
         <div class="popup-wrapper">
           <div class="popup">
             <div class="popup-close">
-              <i class="material-icons" style="color: rgb(250, 249, 249)"> highlight_off </i>
+              <i class="material-icons" style="color: rgb(250, 249, 249)">
+                highlight_off
+              </i>
             </div>
             <!-- popup -->
             <div class="popup-content">
