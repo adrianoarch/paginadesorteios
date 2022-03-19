@@ -27,7 +27,7 @@ body {
   padding: 15px;
   border-top: 1px solid rgba(129, 126, 126, 0.5);
   border-left: 1px solid rgba(129, 126, 126, 0.5);
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   overflow: hidden;
 }
 
@@ -83,11 +83,12 @@ input {
   border: none;
   padding: 5px 15px;
   font-size: 1rem;
+
 }
 
 input::placeholder{
   text-align: center;
-  font-size: 1.125rem;
+  font-size: min(20px, 2vw);
 }
 
 .addparticipantes {
@@ -132,7 +133,7 @@ input::placeholder{
   color: rgb(229, 233, 33);
   font-size: 1.2rem;
   font-weight: bold;
-  width: 30%;
+  width: 40%;
   text-align: center;
   margin: 0 auto;
   margin-top: 10px;
@@ -328,6 +329,120 @@ input::placeholder{
   font-weight: 700;
 }
 
+@media screen and (max-width: 1024px) {
+  .container{
+    align-items: center;
+    margin: 20px;
+  width: 90vw;
+  min-height: 80vh;
+}
+
+.container .content h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 5px;
+}
+
+.content{
+  justify-content: center;
+  flex-direction: row;
+  width: 70vw;
+}
+
+.box {
+  margin: 0 auto;
+  width: 100%;
+  background: rgba(58, 61, 65, 0.24);
+  padding: 10px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 15px 5px #1c1c1c;
+  box-shadow: 0px 5px 15px 5px #1c1c1c;
+}
+
+.box form {
+  display: block;
+}
+
+input{
+  width: 100%;
+}
+
+input::placeholder{
+  font-size: 0.9rem;
+}
+
+.addparticipantes{
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  height: 40px;
+}
+.addparticipantes:active, .addparticipantes:focus{
+  transform: scale(1);
+  background-color: rgba(19, 82, 218, 0.5);
+}
+.listaparticipantes{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  letter-spacing: 0.08rem;
+}
+
+.participantesitem {
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+.removeritem{
+  font-size: 0.9rem;
+  padding: 0 8px;
+  height: 40px;
+}
+
+.resetaritens{
+  font-size: 0.9rem;
+  height: 40px;
+  transition: transform 0.3s;
+  padding: 0 10px;
+}
+
+.resetaritens:hover {
+  transform: scale(1.02);
+  background-color: rgba(19, 82, 218, 0.897);
+}
+
+.resetaritens:active, .resetaritens:focus{
+    transform: scale(1);
+    background-color: rgba(19, 82, 218, 0.5);
+}
+
+#erro{
+  margin-top: 15px;
+  font-size: 1rem;
+  color: rgb(229, 233, 33);
+}
+#erroreset{
+  margin-top: 15px;
+  font-size: 1rem;
+  color: rgb(229, 233, 33);
+}
+#errosorteio{
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  color: rgb(229, 233, 33);
+  /* text-align: center; */
+  /* margin: 0 auto; */
+}
+.animacaoloading{
+  width: 40px;
+  height: 40px;
+}
+}
+
 @media screen and (max-width: 400px) {
   .container{
     align-items: center;
@@ -375,8 +490,12 @@ input::placeholder{
   margin: 0 auto;
   margin-top: 10px;
   font-size: 0.8rem;
+  height: 35px;
 }
-
+.addparticipantes:active, .addparticipantes:focus{
+  transform: scale(1);
+  background-color: rgba(19, 82, 218, 0.5);
+}
 .listaparticipantes{
   width: 100%;
   margin: 0 auto;
@@ -395,6 +514,25 @@ input::placeholder{
   padding: 0 5px;
   height: 30px;
 }
+
+.resetaritens{
+  font-size: 0.8rem;
+  padding: 0 5px;
+  height: 35px;
+  transition: transform 0.3s;
+  padding: 0 10px;
+}
+
+.resetaritens:hover {
+  transform: scale(1.02);
+  background-color: rgba(19, 82, 218, 0.897);
+}
+
+.resetaritens:active, .resetaritens:focus{
+    transform: scale(1);
+    background-color: rgba(19, 82, 218, 0.5);
+}
+
 #erro{
   margin-top: 15px;
   font-size: 1rem;

@@ -28,6 +28,7 @@ window.addEventListener("load", () => {
     if (!pessoa) {
       erro.style.display = "block";
       erroSorteio.style.display = "none";
+      erroReset.style.display = "none";
       return;
     }
 
@@ -58,6 +59,7 @@ window.addEventListener("load", () => {
     if (lista.childNodes.length < 2) {
       erroSorteio.style.display = "block";
       loadingResult.style.display = "none";
+      erroReset.style.display = "none";
       return;
     }
 
@@ -97,6 +99,8 @@ window.addEventListener("load", () => {
 
   buttonLimpar.addEventListener("click", () => {
     if (lista.childNodes.length === 0) {
+      erro.style.display = "none";
+      erroSorteio.style.display = "none";
       erroReset.style.display = "block";
       return;
     }
